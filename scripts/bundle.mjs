@@ -1,0 +1,17 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const read=p=>readFile(p,'utf8');
+const [html,css,data,engine,worker,pool,app,editor,source,notice,license,optimization]=await Promise.all(['index.html','style.css','data.js','engine.js','worker.js','search-pool.js','app.js','editor.js','SOURCES.md','NOTICE.md','LICENSE','OPTIMIZATION.md'].map(read));
+const safe=s=>s.replace(/<\/script/gi,'<\\/script');
+const [translations,i18n,support]=await Promise.all(['translations.js','i18n.js','support.js'].map(read));
+const [summary,summaryCss,patterns]=await Promise.all(['city-summary.js','city-summary.css','patterns.js'].map(read));
+const workerSource=data+'\n'+engine+'\n'+worker.replace("importScripts('data.js','engine.js');",'');
+const escape=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+let out=html.replace('<link rel="stylesheet" href="style.css">','<style>'+css+'</style>');
+out=out.replace('<link rel="stylesheet" href="city-summary.css">','<style>'+summaryCss+'</style>');
+out=out.replace('<script src="city-summary.js"></script>',()=>'<script>'+safe(summary)+'</script>');
+out=out.replace('<script src="translations.js"></script><script src="i18n.js"></script>',()=>'<script>'+safe(translations)+'\n'+safe(i18n)+'</script>');
+out=out.replace('<script src="support.js"></script>',()=>'<script>'+safe(support)+'</script>');
+out=out.replace('<script src="data.js"></script><script src="engine.js"></script><script src="search-pool.js"></script><script src="patterns.js"></script><script src="app.js"></script><script src="editor.js"></script>',()=>'<script>'+safe(data)+'\n'+safe(engine)+'\nglobalThis.HOH_WORKER_SOURCE='+safe(JSON.stringify(workerSource))+';\n'+safe(pool)+'\n'+safe(patterns)+'\n'+safe(app)+'\n'+safe(editor)+'</script>');
+out=out.replace('href="SOURCES.md"','href="#sourceDetails"').replace('href="NOTICE.md"','href="#noticeDetails"').replace('href="LICENSE"','href="#licenseDetails"').replace('href="OPTIMIZATION.md"','href="#optimizationDetails"');
+out=out.replace('</main>',()=>`<details id="optimizationDetails"><summary>Jak obliczany jest układ</summary><pre style="white-space:pre-wrap">${escape(optimization)}</pre></details><details id="sourceDetails"><summary>Źródła i ograniczenia</summary><pre style="white-space:pre-wrap">${escape(source)}</pre></details><details id="noticeDetails"><summary>Autorstwo i kod źródłowy</summary><p>Pełny kod działającej aplikacji jest w tym pliku HTML. Zapisz plik i wybierz „Wyświetl źródło strony”.</p><pre style="white-space:pre-wrap">${escape(notice)}</pre></details><details id="licenseDetails"><summary>Licencja AGPL-3.0</summary><pre style="white-space:pre-wrap">${escape(license)}</pre></details></main>`);
+await writeFile('Furia-generator.html',out);console.log('Furia-generator.html: '+out.length+' znaków');
