@@ -1,7 +1,7 @@
 # Autorstwo
 
-**Autor: Marek „Zenmar” — https://github.com/mzenft2 · https://ko-fi.com/zenmar**
-Copyright © 2026 Marek „Zenmar”. Generator (silnik układania, model odbiorów, wzorce, interfejs, tłumaczenia) jest moim autorskim kodem.
+**Autor: Marek Zenft** — kontakt: Discord https://discord.com/users/1054364881089994782 · https://github.com/mzenft2 · https://ko-fi.com/zenmar
+Copyright © 2026 Marek Zenft. Generator (silnik układania, model odbiorów, wzorce, interfejs, tłumaczenia) jest moim autorskim kodem.
 
 Na podstawie sekcji 7(b) licencji GNU AGPL v3: każda kopia i każda zmodyfikowana wersja musi zachować tę informację o autorstwie oraz widoczne w interfejsie oznaczenie „Zenmar Strategy”.
 
