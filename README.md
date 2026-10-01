@@ -1,5 +1,7 @@
 # Zenmar Strategy — generator głównego miasta HoH
 
+**Autor: Marek „Zenmar”** ([github.com/mzenft2](https://github.com/mzenft2)) · © 2026 · licencja [GNU AGPL v3](LICENSE) z obowiązkiem zachowania autorstwa — szczegóły w [NOTICE.md](NOTICE.md).
+
 ## Otwieranie
 Najprościej: kliknij dwukrotnie **Furia-generator.html**. To samodzielny plik — mapa, dane i obliczenia działają bez serwera i bez internetu. Nie wymaga UAC. Zamknięcie karty kończy pracę. Można przekazać sam plik HTML innemu graczowi.
 

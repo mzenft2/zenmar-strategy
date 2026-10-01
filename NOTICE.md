@@ -1,5 +1,12 @@
 # Autorstwo
 
+**Autor: Marek „Zenmar” — https://github.com/mzenft2 · https://ko-fi.com/zenmar**
+Copyright © 2026 Marek „Zenmar”. Generator (silnik układania, model odbiorów, wzorce, interfejs, tłumaczenia) jest moim autorskim kodem.
+
+Na podstawie sekcji 7(b) licencji GNU AGPL v3: każda kopia i każda zmodyfikowana wersja musi zachować tę informację o autorstwie oraz widoczne w interfejsie oznaczenie „Zenmar Strategy”.
+
+## Zapożyczenia
+
 Sposób obliczania zasięgu i bonusu szczęścia w engine.js został zaadaptowany z Forge of Games autorstwa Ingweland:
 https://github.com/ingweland/forge-of-games
 Wersja źródła: 17bf906e3b91ada869eefcec708bc62887b40014.
