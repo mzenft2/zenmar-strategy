@@ -4,7 +4,7 @@
 Najprościej: kliknij dwukrotnie **Furia-generator.html**. To samodzielny plik — mapa, dane i obliczenia działają bez serwera i bez internetu. Nie wymaga UAC. Zamknięcie karty kończy pracę. Można przekazać sam plik HTML innemu graczowi.
 
 ## Wersja z serwerem (opcjonalna)
-1. Otwórz folder `D:\AI app\domowy\hoh-generator`.
+1. Otwórz folder projektu (ten, w którym leży ten plik).
 2. Uruchom `Uruchom.ps1` przez PowerShell (prawy przycisk → Uruchom za pomocą programu PowerShell). Nie wymaga uprawnień administratora ani UAC.
 3. Otwórz http://127.0.0.1:4173 w przeglądarce. Okno PowerShell zostaw otwarte.
 4. Zaznacz teren, liczbę premium, budynki funkcyjne i rytm odbiorów. Kliknij „Ułóż miasto”.
